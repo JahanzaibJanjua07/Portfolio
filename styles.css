@@ -123,9 +123,11 @@ body {
 
 .FirstElement {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   padding-top: 5rem;
+  width: fit-content;
+  margin: auto;
 }
 
 .FirstElement.adjusted-padding {
@@ -404,6 +406,7 @@ profile-photo .img {
   flex-basis: 32%;
   transition: .3s;
   margin-bottom: 45px;
+  height: auto;
 }
 
 .project img {
