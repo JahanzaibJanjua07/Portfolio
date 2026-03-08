@@ -21,26 +21,10 @@ $(document).ready(function() {
         return; 
       }
   
-      if (target === "#home") {
-        $("html, body").animate(
-          {
-            scrollTop: 0 
-          },
-          500
-        );
-      } else {
-        var offset = $(target).offset().top - 40; 
+      var scrollTop = target === "#home" ? 0 : $(target).offset().top - 40;
+      $("html, body").animate({ scrollTop: scrollTop }, 500);
   
-        $("html, body").animate(
-          {
-            scrollTop: offset
-          },
-          500
-        );
-      }
-  
-      $(".header ul li a").removeClass("active");
-      $(this).addClass("active");
+      setActiveNavLink(target);
     });
   
 
@@ -83,14 +67,18 @@ $(document).ready(function() {
   })
     
   });
-  
+
+  function setActiveNavLink(href) {
+    $(".header ul li a").removeClass("active");
+    $(".header ul li a[href='" + href + "']").addClass("active");
+  }
+
   function updateActiveSection() {
     var scrollPosition = $(window).scrollTop();
   
     // Checking if scroll position is at the top of the page
     if (scrollPosition === 0) {
-      $(".header ul li a").removeClass("active");
-      $(".header ul li a[href='#home']").addClass("active");
+      setActiveNavLink('#home');
       return;
     }
   
@@ -104,11 +92,9 @@ $(document).ready(function() {
         scrollPosition >= offset - 40 &&
         scrollPosition < offset + height - 40
       ) {
-        $(".header ul li a").removeClass("active");
-        $(".header ul li a[href='#" + target + "']").addClass("active");
+        setActiveNavLink('#' + target);
       }
     });
   }
   
-
  
