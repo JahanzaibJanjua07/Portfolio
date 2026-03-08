@@ -165,25 +165,11 @@ profile-photo .img {
   color: #e5e5e5;
 }
 
-.profile-text .social i {
-  color: #e5e5e5;
-  font-size: 18px;
-  margin-right: 10px;
+.profile-text .social .social-icon {
   transition: 0.5s;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #5C8374;
-  border-radius: 50%;
-  font-size: 20px;
-  color: #93B1A6;
-  text-decoration: none;
-  margin: 30px 15px 30px 0;
 }
 
-.profile-text .social i:hover {
+.profile-text .social .social-icon:hover {
   color: #FF9800;
   transform: rotate(360deg);
 }
@@ -316,8 +302,6 @@ profile-photo .img {
 }
 
 .education-content .row .internship .timeline-item {
-  position: relative;
-  padding-left: 37px;
   padding-bottom: 30px;
 }
 
@@ -352,8 +336,6 @@ profile-photo .img {
 }
 
 .education-content .row .internship .timeline-title {
-  font-weight: 700;
-  font-size: 18px;
   margin-bottom: 8px;
 }
 
@@ -411,7 +393,7 @@ profile-photo .img {
 
 .project img {
   width: 100%;
-  height: 50%;
+  height: fit-content;
 }
 
 .project .links-group {
@@ -552,7 +534,7 @@ profile-photo .img {
   margin-top: 25px;
 }
 
-.social-footer a {
+.social-icon {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -565,7 +547,8 @@ profile-photo .img {
   text-decoration: none;
   margin: 30px 15px 30px 0;
 }
-.social-footer a:hover {
+
+.social-footer .social-icon:hover {
   color: #7FC7D9;
   box-shadow: 0 0 20px #0F1035;
 }
